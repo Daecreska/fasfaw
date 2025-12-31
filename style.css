@@ -1,0 +1,418 @@
+/* ПОДКЛЮЧЕНИЕ ШРИФТОВ */
+@font-face {
+    font-family: 'Igra Sans';
+    src: url('IgraSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+:root {
+    --black: #272525;
+    --red: #ff3333;
+    --bg-main: #f2f2f2;
+    --radius: 20px;
+    --radius-sm: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--black);
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header */
+.header {
+    background: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Igra Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.logo span { color: var(--red); }
+
+.nav a {
+    text-decoration: none;
+    color: var(--black);
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn-header {
+    background: #272525;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.header__phone {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 30px 0;
+    font-size: 16px;
+    color: #999;
+}
+
+.breadcrumbs a { color: #999; text-decoration: none; }
+.breadcrumbs span { color: var(--black); }
+
+/* Layout Grid */
+.layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding-bottom: 100px;
+}
+
+.content { flex: 1; }
+
+/* Hero Section */
+.hero__title {
+    font-family: 'Igra Sans', sans-serif;
+    font-size: 70px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 35px;
+}
+
+.hero__meta {
+    display: flex;
+    gap: 45px;
+    margin-bottom: 40px;
+}
+
+.meta-box {
+    padding-left: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.meta-box__title { font-weight: 700; font-size: 18px; }
+.meta-box__sub { font-size: 14px; color: #888; margin-top: 4px; }
+.map-link { color: var(--red); font-size: 12px; margin-left: 10px; }
+
+/* Slider */
+.slider {
+    width: 850px;
+    height: 478px;
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.slider__img { width: 100%; height: 100%; object-fit: cover; }
+
+.slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.slider__arrow img { width: 12px; }
+.slider__arrow--prev { left: 20px; }
+.slider__arrow--prev img { transform: rotate(180deg); }
+.slider__arrow--next { right: 20px; }
+
+/* Cards */
+.card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 45px 50px;
+    margin-bottom: 25px;
+}
+
+.card__title {
+    font-family: 'Igra Sans', sans-serif;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.card__list li {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+.card__list li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+.card__text { font-size: 16px; color: var(--black); line-height: 1.6; }
+.mt-20 { margin-top: 20px; }
+
+/* Map Widget */
+.map-widget {
+    margin-top: 40px;
+    width: 100%;
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.map-widget__img { width: 100%; display: block; }
+
+.map-nav {
+    padding: 25px;
+    border-top: 1px solid #eee;
+}
+
+.map-nav__title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.map-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.map-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 40px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.map-btn:hover { background: #f9f9f9; }
+.map-btn__icon { width: 14px; }
+
+/* Section: Как проходит (Steps) */
+.steps {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 50px;
+    margin-top: 25px;
+}
+
+.steps__main-title {
+    font-family: 'Igra Sans', sans-serif;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.steps__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.step-card {
+    border: 1px solid #e0e0e0;
+    padding: 35px;
+    border-radius: var(--radius);
+    background: #fff;
+}
+
+.step-card__num {
+    font-family: 'Igra Sans', sans-serif;
+    font-size: 48px;
+    color: var(--red);
+    margin-bottom: 10px;
+}
+
+.step-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.step-card__line {
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    margin-bottom: 20px;
+}
+
+.step-card__text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Sidebar & Registration Form */
+.sidebar { width: 420px; }
+
+.form-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 45px 40px;
+    position: sticky;
+    top: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.form-card__title {
+    font-family: 'Igra Sans', sans-serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.form-card__subtitle { font-size: 14px; margin-bottom: 20px; }
+.price-main { font-size: 24px; font-weight: 700; margin-top: 5px; }
+
+.badge-promo {
+    background: #7dbfff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.price-details {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.age-tags { font-size: 12px; color: #999; margin-bottom: 20px; }
+
+.badge-limit {
+    border: 1px solid var(--red);
+    color: var(--red);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 16px 25px;
+    border: 1px solid #eee;
+    border-radius: 40px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+.gender-selection { margin: 25px 0; }
+.gender-label { font-size: 14px; display: block; margin-bottom: 10px; }
+.radio-group { display: flex; gap: 20px; font-size: 14px; }
+.radio-item { cursor: pointer; display: flex; align-items: center; gap: 8px; }
+
+.form-disclaimer {
+    font-size: 11px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-submit:hover { opacity: 0.9; }
+
+.checkbox-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    font-size: 11px;
+    color: #999;
+    line-height: 1.4;
+}
+
+.checkbox-container input { 
+    width: 20px; 
+    height: 20px; 
+    flex-shrink: 0; 
+    cursor: pointer; 
+}
+
+.checkbox-container label a { 
+    color: var(--red); 
+    text-decoration: none; 
+}
