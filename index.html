@@ -12,6 +12,7 @@
     <div class="container">
         <div class="header__inner">
             <div class="logo">Fast<span>Life</span></div>
+            
             <nav class="nav">
                 <a href="#">Расписание</a>
                 <a href="#">Рестораны</a>
@@ -19,9 +20,54 @@
                 <a href="#">Как оплатить</a>
                 <a href="#">Отзывы</a>
             </nav>
+
             <div class="header__actions">
                 <button class="btn-header">Свяжитесь со мной</button>
                 <a href="tel:+74951510025" class="header__phone">+7 495 151-00-25</a>
+            </div>
+
+            <div class="burger-circle" id="burgerBtn">
+                <div class="burger-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileMenu">
+        <div class="mobile-card">
+            <div class="mobile-card__close" id="closeBtn">&times;</div>
+            
+            <nav class="mobile-nav">
+                <a href="#">Расписание</a>
+                <a href="#">Рестораны</a>
+                <a href="#">Фото</a>
+                <a href="#">Как оплатить</a>
+                <a href="#">Отзывы</a>
+            </nav>
+
+            <div class="mobile-actions">
+                <button class="btn-black-mobile">Свяжитесь со мной</button>
+                <a href="tel:+74951510025" class="btn-phone-mobile">+7 495 151-00-25</a>
+            </div>
+
+            <div class="mobile-socials">
+                <a href="#" class="social-circle"><img src="Vector.png" alt="VK"></a>
+                <a href="#" class="social-circle"><img src="Vector.png" alt="TG"></a>
+                <a href="#" class="social-circle"><img src="Vector.png" alt="WA"></a>
+            </div>
+
+            <div class="mobile-card-footer">
+                <div class="footer-content">
+                    <h3>Уже 13 лет</h3>
+                    <p>соединяем сердца</p>
+                </div>
+                <button class="btn-calendar-mini">
+                    <img src="Vector.png" alt="" style="width: 12px; margin-right: 8px;">
+                    Ближайшие мероприятия
+                </button>
             </div>
         </div>
     </div>
@@ -34,7 +80,6 @@
 
     <div class="layout">
         <div class="content">
-            <!-- Блок Hero -->
             <section class="hero">
                 <h1 class="hero__title">Православный<br>Speed Dating</h1>
                 
@@ -54,7 +99,6 @@
                 </div>
             </section>
 
-            <!-- О ресторане -->
             <section class="card">
                 <h2 class="card__title">О ресторане</h2>
                 <ul class="card__list">
@@ -63,13 +107,11 @@
                 </ul>
             </section>
 
-            <!-- Dress-code -->
             <section class="card">
                 <h2 class="card__title">Dress-code</h2>
                 <p class="card__text">Отсутствие спортивной одежды, пляжных шорт и т.п. Погрузитесь в атмосферу новых знакомств и возможно, именно здесь вы встретите свою судьбу!</p>
             </section>
 
-            <!-- Как добраться -->
             <section class="card">
                 <h2 class="card__title">Как добраться</h2>
                 <p class="card__text">Выход из м. Технопарк №7. Выйдя из метро поверните направо в сторону парковки, пройдите через него и поверните направо в сторону аллеи. На алее двигайтесь ко входу в Остров мечты. Пройдите внутрь, двигайтесь по правой стороне до карусели, напротив вход в ресторан.</p>
@@ -93,7 +135,6 @@
                 </div>
             </section>
 
-            <!-- Как проходит (Все 6 блоков) -->
             <section class="steps">
                 <h2 class="steps__main-title">Как проходит</h2>
                 <div class="steps__grid">
@@ -141,8 +182,6 @@
                 </div>
             </section>
         </div>
-
-        <!-- Сайдбар с формой -->
         <aside class="sidebar">
             <div class="form-card">
                 <h3 class="form-card__title">Запишитесь в 1 клик!</h3>
@@ -189,6 +228,29 @@
         </aside>
     </div>
 </main>
+<script>
+    const burgerBtn = document.getElementById('burgerBtn');
+const closeBtn = document.getElementById('closeBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
+burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Запрещаем прокрутку сайта под меню
+});
+
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = ''; // Возвращаем прокрутку
+});
+
+// Закрытие при клике на темный фон
+mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+</script>
 </body>
 </html>
